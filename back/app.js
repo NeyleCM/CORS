@@ -1,6 +1,9 @@
 const express = require('express')
 const axios = require('axios')
+const cors = require('cors')
 const app = express()
+
+app.use(cors())
 
 app.get('/pokemon/:pokemonName', async (req, res) => {
     const pokemonName = req.params.pokemonName
@@ -15,7 +18,7 @@ app.get('/pokemon/:pokemonName', async (req, res) => {
     }
 })
 
-app.listen(4000, () => {
-    console.log('Express está escuchando en el puerto http://localhost:4000');
+app.listen(3002, () => {
+    console.log('Express está escuchando en el puerto http://localhost:3002');
     
 })
